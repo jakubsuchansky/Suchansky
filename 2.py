@@ -32,7 +32,7 @@ print(df_sorted_asc)
 stats = df['hodnota'].describe()
 print(stats)
 
-# Jednotlivé statistiky
+
 print("Průměr:", df['hodnota'].mean())
 print("Minimum:", df['hodnota'].min())
 print("Maximum:", df['hodnota'].max())
