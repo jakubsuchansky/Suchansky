@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import random
+
+# Složená a smysluplná data: denní průměrné teploty během CELÉHO ROKU (365 dní)
+# Data jsou simulovaná tak, aby odpovídala reálným ročním obdobím
+daily_temperatures = []
+
+for day in range(365):
+    if day < 80 or day > 330:          # zima
+        base_temp = random.uniform(-10, 5)
+    elif day < 170:                    # jaro
+        base_temp = random.uniform(5, 15)
+    elif day < 260:                    # léto
+        base_temp = random.uniform(15, 30)
+    else:                              # podzim
+        base_temp = random.uniform(5, 15)
+
+    daily_temperatures.append(base_temp)
+
+# Vykreslení histogramu
+plt.figure(figsize=(10, 6))
+plt.hist(
+    daily_temperatures,
+    bins=25,
+    color="orange",
+    edgecolor="black"
+)
+
+# Nadpis a popisky os
+plt.title("Histogram Denních Teplot Během Roku")
+plt.xlabel("Teplota (°C)")
+plt.ylabel("Počet dní")
+
+# Zobrazení grafu
+plt.show()
